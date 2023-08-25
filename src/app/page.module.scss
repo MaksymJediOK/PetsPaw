@@ -4,7 +4,7 @@
   text-align: center;
   justify-items: end;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (width <= 768px) {
     display: none;
   }
 
@@ -24,6 +24,7 @@
     height: 840px;
     z-index: -1;
   }
+  
   &:nth-child(2) {
     justify-self: end;
   }
