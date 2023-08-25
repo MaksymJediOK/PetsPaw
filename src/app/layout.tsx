@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body suppressHydrationWarning={true} className={jost.className}>
         <div className='global-container'>
           <Navigation />
-          {children}
+          <div>{children}</div>
         </div>
       </body>
     </html>

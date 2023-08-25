@@ -1,0 +1,18 @@
+.Nav_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  column-gap: 10px;
+  margin-left: 10px;
+}
+
+.Nav_icon {
+  border-radius: 20px;
+  background: #fff;
+  padding: 15px;
+  cursor: pointer;
+
+  &.nav_active {
+    background: #ff868e;
+  }
+}

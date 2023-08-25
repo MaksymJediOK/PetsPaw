@@ -5,6 +5,7 @@ import Image from 'next/image';
 import SearchIcon from '@/assets/icons/search-20.svg';
 
 interface SearchBarProps {
+    // eslint-disable-next-line no-unused-vars
   onSearch: (searchTerm: string) => void;
 }
 
