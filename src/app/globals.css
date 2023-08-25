@@ -1,0 +1,9 @@
+@import "normalize.css";
+body {
+  background: #f8f8f7;
+}
+
+.global-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

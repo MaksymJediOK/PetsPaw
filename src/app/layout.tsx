@@ -1,9 +1,10 @@
 import React from 'react';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Jost } from 'next/font/google';
+import { Navigation } from '@/components/Navigation';
 
-const inter = Inter({ subsets: ['latin'] });
+const jost = Jost();
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,8 +13,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html suppressHydrationWarning={true} lang='en'>
+      <body suppressHydrationWarning={true} className={jost.className}>
+        <div className='global-container'>
+          <Navigation />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

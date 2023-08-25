@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  justify-items: end;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  .girl_icon {
+    display: inline-block;
+    width: 775px;
+    height: 900px;
+    vertical-align: middle;
+  }
+
+  .background {
+    margin: 30px 30px 30px 65px;
+    position: absolute;
+    background: #fbe0dc;
+    border-radius: 24px;
+    width: 680px;
+    height: 840px;
+    z-index: -1;
+  }
+  &:nth-child(2) {
+    justify-self: end;
+  }
+}

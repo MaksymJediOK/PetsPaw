@@ -1,0 +1,23 @@
+.btn_text {
+  border-radius: 10px;
+  background: #fff;
+  color: #ff868e;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  min-width: 138px;
+  padding: 10px 0;
+  text-decoration: none;
+  &:hover {
+    background: #fbe0dc;
+    transition: ease-in-out 0.5s;
+  }
+  &.active {
+    color: #fff;
+    background: #ff868e;
+  }
+}

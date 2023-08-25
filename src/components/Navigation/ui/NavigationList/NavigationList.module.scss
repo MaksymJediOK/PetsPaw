@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  gap: 0 16px;
+  align-items: center;
+}
+
+.item_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px 0;
+}

@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.logo {
+  margin-top: 30px;
+}
+
+.welcome_container {
+  margin-top: 80px;
+}
+
+.welcome_text {
+  color: #1d1d1d;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 58px;
+  margin: 0;
+
+  &__sub {
+    color: #8c8c8c;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+  }
+}
+
+.lets_text {
+  color: #1D1D1D;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 60px 0 20px 0;
+  padding: 0;
+}
+
