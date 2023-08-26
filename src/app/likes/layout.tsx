@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 };
 export default function LikesLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <SharedLayout />
+      <div>
+        <SharedLayout />
         {children}
-    </>
+      </div>
   );
 }

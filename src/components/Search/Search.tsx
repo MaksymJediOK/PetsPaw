@@ -26,6 +26,7 @@ const Search = ({ onSearch }: SearchBarProps) => {
     <div className='search-bar'>
       <input
         type='text'
+        name='search'
         placeholder='Search for breeds by name'
         value={searchTerm}
         onChange={handleInputChange}

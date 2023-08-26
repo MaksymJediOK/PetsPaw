@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 };
 export default function FavouritesLayout({ children }: { children: React.ReactNode }) {
     return (
-        <>
+        <div>
             <SharedLayout />
             {children}
-        </>
+        </div>
     );
 }
