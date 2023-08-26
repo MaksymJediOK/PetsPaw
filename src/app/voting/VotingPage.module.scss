@@ -1,11 +1,26 @@
 .container {
   border-radius: 20px;
   background: #fff;
+  max-width: 680px;
+
+  .img {
+    border-radius: 20px;
+    display: block;
+    max-width: 100%;
+  }
 }
 
 .row_container {
   display: flex;
   align-items: center;
-  margin: 0 20px;
   padding: 20px 0;
+}
+
+.content {
+  margin: 0 20px;
+}
+
+.image_container {
+  position: relative;
+  display: inline-block;
 }
