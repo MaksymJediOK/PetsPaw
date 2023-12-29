@@ -1,18 +1,18 @@
-import { Metadata } from 'next';
-import classes from './VotingPage.module.scss';
-import { BackButton } from '@/ui/BackButton';
-import { CurrentPageMark } from '@/ui/CurrentPageMark';
-import { getCatImage } from '@/services/getCatImage';
-import { Reactions } from '@/components/Reactions';
-import Image from 'next/image';
+import { Metadata } from 'next'
+import classes from './VotingPage.module.scss'
+import { BackButton } from '@/ui/BackButton'
+import { CurrentPageMark } from '@/ui/CurrentPageMark'
+import { getCatImage } from '@/services/getCatImage'
+import { Reactions } from '@/components/Reactions'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Voting',
-};
+}
 
 export default async function VotingPage() {
-  const Cat = await getCatImage();
-  const { url, id } = Cat[0];
+  const Cat = await getCatImage()
+  const { url, id } = Cat[0]
   return (
     <div className={classes.container}>
       <div className={classes.content}>
@@ -21,11 +21,10 @@ export default async function VotingPage() {
           <CurrentPageMark text='voting' />
         </div>
         <div className={classes.image_container}>
-          <Image className={classes.img} src={url} width={640} height={360} alt={id} />
+          <Image className={classes.img} src={url} width={640} height={360} alt={id} priority />
           <Reactions />
         </div>
-
       </div>
     </div>
-  );
+  )
 }

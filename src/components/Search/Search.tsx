@@ -1,31 +1,30 @@
-'use client';
-import './Search.scss';
-import React, { useState } from 'react';
-import Image from 'next/image';
-import SearchIcon from '@/assets/icons/search-20.svg';
+'use client'
+import './Search.scss'
+import React, { useState } from 'react'
+import Image from 'next/image'
+import SearchIcon from '@/assets/icons/search-20.svg'
 
 interface SearchBarProps {
-    // eslint-disable-next-line no-unused-vars
-  onSearch: (searchTerm: string) => void;
+  // eslint-disable-next-line no-unused-vars
+  onSearch: (searchTerm: string) => void
 }
 
 const Search = ({ onSearch }: SearchBarProps) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('')
 
   const handleSearch = () => {
     if (onSearch) {
-      onSearch(searchTerm);
+      onSearch(searchTerm)
     }
-  };
+  }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+    setSearchTerm(event.target.value)
+  }
 
   return (
     <div className='search-bar'>
       <input
-        type='text'
         name='search'
         placeholder='Search for breeds by name'
         value={searchTerm}
@@ -41,7 +40,7 @@ const Search = ({ onSearch }: SearchBarProps) => {
         />
       </button>
     </div>
-  );
-};
+  )
+}
 
-export { Search };
+export { Search }

@@ -1,22 +1,25 @@
-import classes from './NavigationList.module.scss';
-import { NavigationBreeds, NavigationGallery, NavigationVoting } from '../NavigationItem';
+'use client'
+import classes from './NavigationList.module.scss'
+import { NavigationBreeds, NavigationGallery, NavigationVoting } from '../NavigationItem'
+import { usePathname } from 'next/navigation'
 
 const NavigationList = () => {
+  const pathName = usePathname()
   return (
     <>
       <div className={classes.container}>
         <div className={classes.item_container}>
-          <NavigationVoting />
+          <NavigationVoting path={pathName} />
         </div>
         <div className={classes.item_container}>
-          <NavigationBreeds />
+          <NavigationBreeds path={pathName} />
         </div>
         <div className={classes.item_container}>
-          <NavigationGallery />
+          <NavigationGallery path={pathName} />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export { NavigationList };
+export { NavigationList }
