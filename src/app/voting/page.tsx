@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import classes from './VotingPage.module.scss'
 import { BackButton } from '@/ui/BackButton'
 import { CurrentPageMark } from '@/ui/CurrentPageMark'
-import { getCatImage } from '@/services/getCatImage'
 
 import { VotingLog } from '@/components/VotingLog/VotingLog'
 import { VotingScreen } from '@/app/voting/VotingScreen'
