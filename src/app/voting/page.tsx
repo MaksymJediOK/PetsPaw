@@ -3,16 +3,15 @@ import classes from './VotingPage.module.scss'
 import { BackButton } from '@/ui/BackButton'
 import { CurrentPageMark } from '@/ui/CurrentPageMark'
 import { getCatImage } from '@/services/getCatImage'
-import { Reactions } from '@/components/Reactions'
-import Image from 'next/image'
+
+import { VotingLog } from '@/components/VotingLog/VotingLog'
+import { VotingScreen } from '@/app/voting/VotingScreen'
 
 export const metadata: Metadata = {
   title: 'Voting',
 }
 
 export default async function VotingPage() {
-  const Cat = await getCatImage()
-  const { url, id } = Cat[0]
   return (
     <div className={classes.container}>
       <div className={classes.content}>
@@ -20,10 +19,13 @@ export default async function VotingPage() {
           <BackButton />
           <CurrentPageMark text='voting' />
         </div>
-        <div className={classes.image_container}>
-          <Image className={classes.img} src={url} width={640} height={360} alt={id} priority />
-          <Reactions />
-        </div>
+        <VotingScreen />
+      </div>
+      <div className={classes.user_logs}>
+        <VotingLog />
+        <VotingLog />
+        <VotingLog />
+        <VotingLog />
       </div>
     </div>
   )

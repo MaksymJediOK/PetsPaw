@@ -1,18 +1,14 @@
 import { buildQueryString } from '@/services/QueryBuilder'
+import { CatWithImageShort } from '@/types'
 
-interface CatWithImage {
-  id: string
-  url: string
-  breeds: string[]
-  categories: string[]
-}
-
-export const getCatImage = async (): Promise<CatWithImage[]> => {
-  const url = buildQueryString()
-  const response = await fetch(url)
+export const getCatImage = async (): Promise<CatWithImageShort> => {
+  const requestUrl = buildQueryString()
+  const response = await fetch(requestUrl, {
+    cache: 'no-cache',
+  })
   if (!response.ok) {
     throw new Error('unable to fetch')
   }
-
-  return response.json()
+  const result = await response.json()
+  return result[0] as CatWithImageShort
 }

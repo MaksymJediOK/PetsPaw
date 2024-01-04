@@ -12,6 +12,7 @@ export default function GirlAndPet() {
         height={GirlImg.height}
         alt='girl and pet'
         className={classes.girl_icon}
+        priority
       />
     </div>
   );
