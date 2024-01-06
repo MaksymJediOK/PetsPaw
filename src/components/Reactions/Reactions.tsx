@@ -7,6 +7,9 @@ import Dislike from '@/assets/icons/white/dislike-white-30.svg'
 import Image from 'next/image'
 import { VoteUpOrDown } from '@/services/VotingService'
 import { addToFavourites } from '@/services/FavouritesService'
+import { useLogStore } from '@/store'
+import { Reactions as LogReactions } from '@/types/constants'
+import { formLog } from '@/app/voting/CreateNewLog'
 
 interface ReactionsProps {
   imageId: string
@@ -14,16 +17,21 @@ interface ReactionsProps {
 }
 
 const Reactions = ({ imageId, nextImage }: ReactionsProps) => {
+  const addNewLog = useLogStore((state) => state.addNewLog)
+
   const voteUp = async () => {
     await VoteUpOrDown(imageId)
+    addNewLog(formLog(imageId, { reaction: LogReactions.Likes, action: 'added to' }))
     await nextImage()
   }
   const addToFav = async () => {
     await addToFavourites(imageId)
+    addNewLog(formLog(imageId, { reaction: LogReactions.Favourites, action: 'added to' }))
     await nextImage()
   }
   const dislike = async () => {
     await VoteUpOrDown(imageId, false)
+    addNewLog(formLog(imageId, { reaction: LogReactions.Dislikes, action: 'added to' }))
     await nextImage()
   }
 

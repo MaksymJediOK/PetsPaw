@@ -1,5 +1,4 @@
 'use client'
-
 import Image from 'next/image'
 import classes from '@/app/voting/VotingPage.module.scss'
 import { Reactions } from '@/components/Reactions'
