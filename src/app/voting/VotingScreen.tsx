@@ -17,7 +17,6 @@ const VotingScreen = () => {
     setCatData(data)
   }
 
-  const getNextImage = () => fetchCatImage()
   useEffect(() => {
     fetchCatImage()
   }, [])
@@ -27,7 +26,7 @@ const VotingScreen = () => {
       {catData.url ? (
         <>
           <Image className={classes.img} src={catData.url} width={640} height={360} alt={catData.id} />
-          <Reactions imageId={catData.id} nextImage={getNextImage} />
+          <Reactions imageId={catData.id} nextImage={fetchCatImage} />
         </>
       ) : (
         <ImageSkeleton />
