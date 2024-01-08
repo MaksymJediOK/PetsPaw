@@ -3,11 +3,11 @@ import React from 'react'
 import { SharedLayout } from '@/components/SharedLayout'
 
 export const metadata: Metadata = {
-  title: 'Voting',
+  title: 'Breeds',
 }
-export default function VotingLayout({ children }: { children: React.ReactNode }) {
+export default function BreedsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ marginRight: '30px' }}>
+    <div>
       <SharedLayout />
       {children}
     </div>

@@ -5,6 +5,7 @@ import { formatDate, getReactionIcon } from '@/utils'
 import { ActionLog } from '@/types/voting'
 
 const VotingLog = ({ imageId, time, reaction, action }: ActionLog) => {
+
   const img = getReactionIcon(reaction)
   return (
     <div className={classes.background}>

@@ -6,8 +6,10 @@ import { getCatImage } from '@/services/getCatImage'
 import { useEffect, useState } from 'react'
 import { CatWithImageShort } from '@/types'
 import { ImageSkeleton } from '@/components/Skeletons/Image'
+import { useLogStore } from '@/store'
 
 const VotingScreen = () => {
+  const setLoaded = useLogStore((state) => state.setIsLoaded)
   const [catData, setCatData] = useState<CatWithImageShort>({
     url: '',
     id: '',
@@ -15,6 +17,7 @@ const VotingScreen = () => {
   const fetchCatImage = async () => {
     const data = await getCatImage()
     setCatData(data)
+    setLoaded(true)
   }
 
   useEffect(() => {
