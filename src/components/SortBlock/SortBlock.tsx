@@ -1,21 +1,23 @@
 'use client'
 import classes from './SortBlock.module.scss'
 import Image from 'next/image'
-import SortImage from '@/assets/icons/sort-color-20.svg'
-import ReverseSortImage from '@/assets/icons/sort-revert-color-20.svg'
 import { useState } from 'react'
+import { SortStates } from '@/types/constants'
+import { getImagesDepOnState } from './util'
 
 const SortBlock = () => {
-  const [sort, setSort] = useState(false)
-  const [reverseSort, setReverseSort] = useState(false)
+  const [sortState, setSort] = useState(SortStates.bothDisabled)
+
+  const { sort, revSort } = getImagesDepOnState(sortState)
 
   return (
-    <div className={classes.container}>
-      {sort ? (
-        <Image src={SortImage} width={SortImage.width} height={SortImage.height} alt='sort' />
-      ) : (
-        <Image src={ReverseSortImage} width={SortImage.width} height={SortImage.height} alt='reverse sort' />
-      )}
+    <div className={classes.flex}>
+      <div className={classes.container} onClick={() => setSort(SortStates.reverseSort)}>
+        <Image src={revSort} width={revSort.width} height={revSort.height} alt='reverse sort' />
+      </div>
+      <div className={classes.container} onClick={() => setSort(SortStates.sort)}>
+        <Image src={sort} width={sort.width} height={sort.height} alt='sort' />
+      </div>
     </div>
   )
 }

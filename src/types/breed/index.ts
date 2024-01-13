@@ -48,3 +48,10 @@ export type BreedOption = {
   value: string
   label: string
 }
+
+export type SingleBreed = Pick<
+  BreedInfo,
+  'id' | 'temperament' | 'origin' | 'weight' | 'life_span' | 'alt_names'
+> & {
+  image: Pick<BreedInfo['image'], 'id' | 'url'>
+}

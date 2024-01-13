@@ -1,6 +1,6 @@
-import classes from './SharedLayout.module.scss';
-import { UserSearch } from '@/components/UserSearch';
-import { UserChoicesMenu } from '@/components/UserChoicesMenu';
+import classes from './SharedLayout.module.scss'
+import { UserSearch } from '@/components/UserSearch'
+import { UserChoicesMenu } from '@/components/UserChoicesMenu'
 
 const SharedLayout = () => {
   return (
@@ -10,7 +10,7 @@ const SharedLayout = () => {
         <UserChoicesMenu />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { SharedLayout };
+export { SharedLayout }

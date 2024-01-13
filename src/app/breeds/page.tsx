@@ -3,8 +3,9 @@ import { BackButton } from '@/ui/BackButton'
 import { CurrentPageMark } from '@/ui/CurrentPageMark'
 import { makeApiRequest } from '@/utils/configuredFetch'
 import { BreedInfo, BreedOption } from '@/types/breed'
-import {BreedsSelect, LimitSelect} from '@/components/Selects'
-import {SortBlock} from "@/components/SortBlock";
+import { BreedsSelect, LimitSelect } from '@/components/Selects'
+import { SortBlock } from '@/components/SortBlock'
+import { Gallery } from './Gallery'
 
 export default async function BreedsPage() {
   const breeds = await makeApiRequest<BreedInfo[]>('breeds')
@@ -23,8 +24,8 @@ export default async function BreedsPage() {
         <BreedsSelect breeds={[baseOption, ...breedsForSelect]} />
         <LimitSelect />
         <SortBlock />
-        <SortBlock />
       </div>
+      <Gallery breeds={breeds} />
     </div>
   )
 }
