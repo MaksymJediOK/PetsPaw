@@ -1,5 +1,4 @@
 import './GalleryLayout.scss'
-import Image from 'next/image'
 import { SingleBreed } from '@/types/breed'
 import {BreedCard} from "@/components/BreedCard";
 
