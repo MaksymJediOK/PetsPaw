@@ -1,5 +1,5 @@
 export enum SortStates {
-    sort,
-    reverseSort,
-    bothDisabled
+    sort=' ASC',
+    reverseSort ='DESC',
+    bothDisabled = 'EMPTY'
 }

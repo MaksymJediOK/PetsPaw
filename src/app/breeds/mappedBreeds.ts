@@ -1,9 +1,10 @@
-import { BreedInfo, SingleBreed } from '@/types/breed'
+import { BreedInfo, BreedOption, SingleBreed } from '@/types/breed'
 
 export const mappedBreeds = (breeds: BreedInfo[]): SingleBreed[] => {
   return breeds.map((item, index) => {
     return {
       id: item.id,
+      name: item.name,
       temperament: item.temperament,
       origin: item.origin,
       weight: item.weight,
@@ -13,6 +14,15 @@ export const mappedBreeds = (breeds: BreedInfo[]): SingleBreed[] => {
         id: item.image?.id || `${item.id}${index}`,
         url: item.image?.url || 'https://cdn2.thecatapi.com/images/BQMSld0A0.jpg',
       },
+    }
+  })
+}
+
+export const mapToSelectOptions = (breeds: BreedInfo[]): BreedOption[] => {
+  return breeds.map((breed) => {
+    return {
+      value: breed.name,
+      label: breed.name,
     }
   })
 }

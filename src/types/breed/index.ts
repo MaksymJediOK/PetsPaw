@@ -51,7 +51,7 @@ export type BreedOption = {
 
 export type SingleBreed = Pick<
   BreedInfo,
-  'id' | 'temperament' | 'origin' | 'weight' | 'life_span' | 'alt_names'
+  'id' | 'name' | 'temperament' | 'origin' | 'weight' | 'life_span' | 'alt_names'
 > & {
   image: Pick<BreedInfo['image'], 'id' | 'url'>
 }
