@@ -7,7 +7,7 @@ const BLayout = ({ breedsBatch }: { breedsBatch: SingleBreed[] }) => {
     <div className='second_parent'>
       {breedsBatch.map((breed, index) => (
         <div className={`b${index + 1}`} key={breed.id}>
-          <BreedCard url={breed.image.url} id={breed.image.id} />
+          <BreedCard url={breed.image.url} id={breed.id} name={breed.name} />
         </div>
       ))}
     </div>

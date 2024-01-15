@@ -8,7 +8,7 @@ const ALayout = ({ breedsBatch }: { breedsBatch: SingleBreed[] }) => {
     <div className='parent'>
       {breedsBatch.map((breed, index) => (
         <div className={`a${index + 1}`} key={breed.id}>
-          <BreedCard url={breed.image.url} id={breed.image.id} />
+          <BreedCard url={breed.image.url} id={breed.id} name={breed.name} />
         </div>
       ))}
     </div>
