@@ -1,2 +1,3 @@
 export * from './LimitSelect/LimitSelect'
-export { BreedsSelect } from './BreedsSelect/BreedsSelect'
+export * from './BreedsSelect/BreedsSelect'
+export * from './FilterSelect/FilterSelect'
