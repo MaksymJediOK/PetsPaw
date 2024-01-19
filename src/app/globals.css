@@ -16,3 +16,10 @@ body {
   font-weight: 500;
   line-height: 24px;
 }
+
+.layout-container {
+  border-radius: 20px;
+  background: #fff;
+  padding: 20px;
+  max-width: 645px;
+}

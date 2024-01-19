@@ -3,7 +3,7 @@ import React from 'react'
 import { SharedLayout } from '@/components/SharedLayout'
 
 export const metadata: Metadata = {
-  title: 'Breeds',
+  title: 'Gallery',
 }
 export default function BreedsLayout({ children }: { children: React.ReactNode }) {
   return (
