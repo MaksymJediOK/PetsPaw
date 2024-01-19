@@ -1,0 +1,23 @@
+.btn {
+  border-radius: 10px;
+  background: #fbe0dc;
+  padding: 12px 30px;
+  color: #ff868e;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  gap: 10px;
+}
