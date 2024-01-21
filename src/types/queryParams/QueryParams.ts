@@ -1,4 +1,4 @@
-export interface QueryParams {
+export type QueryParams = {
   limit?: number
   page?: number
   order?: 'ASC' | 'DESC' | 'RAND'

@@ -1,4 +1,5 @@
-import { BreedInfo, BreedOption, SingleBreed } from '@/types/breed'
+import { BreedInfo, SingleBreed } from '@/types/breed'
+import {BaseSelectOption} from "@/types/Select";
 
 export const mappedBreeds = (breeds: BreedInfo[]): SingleBreed[] => {
   return breeds.map((item, index) => {
@@ -18,7 +19,7 @@ export const mappedBreeds = (breeds: BreedInfo[]): SingleBreed[] => {
   })
 }
 
-export const mapToSelectOptions = (breeds: BreedInfo[]): BreedOption[] => {
+export const mapToSelectOptions = (breeds: BreedInfo[]): BaseSelectOption[] => {
   return breeds.map((breed) => {
     return {
       value: breed.name,

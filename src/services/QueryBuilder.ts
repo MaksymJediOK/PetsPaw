@@ -1,15 +1,13 @@
 import { QueryParams } from '@/types/queryParams'
-import { api_key, base_url } from '@/types/constants'
+import { base_url } from '@/types/constants'
 
-const buildQueryString = (params?: QueryParams, endpoint: string = 'images/search'): string => {
+const buildQueryString = (params?: QueryParams, endpoint: string = 'images/search?'): string => {
   const baseUrl = `${base_url}/${endpoint}`
   const queryParams = new URLSearchParams()
-  if (!params) {
-    return baseUrl
-  }
-  queryParams.append('?api_key', api_key)
+  if (!params) return baseUrl
+
   for (const [key, value] of Object.entries(params)) {
-    if (value !== undefined) {
+    if (value !== undefined || null) {
       queryParams.append(key, value.toString())
     }
   }

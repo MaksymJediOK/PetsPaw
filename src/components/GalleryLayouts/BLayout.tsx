@@ -1,13 +1,17 @@
 import './GalleryLayout.scss'
-import { SingleBreed } from '@/types/breed'
-import {BreedCard} from "@/components/BreedCard";
+import { GridLayoutProps } from '@/types/gallery'
 
-const BLayout = ({ breedsBatch }: { breedsBatch: SingleBreed[] }) => {
+const BLayout = <T extends { id: string }>({
+  itemsBatch,
+  CardComponent,
+  getUrl,
+  getName,
+}: GridLayoutProps<T>) => {
   return (
     <div className='second_parent'>
-      {breedsBatch.map((breed, index) => (
-        <div className={`b${index + 1}`} key={breed.id}>
-          <BreedCard url={breed.image.url} id={breed.id} name={breed.name} />
+      {itemsBatch.map((entity, index) => (
+        <div className={`b${index + 1}`} key={entity.id}>
+          <CardComponent url={getUrl(entity)} id={entity.id} name={getName(entity)} />
         </div>
       ))}
     </div>

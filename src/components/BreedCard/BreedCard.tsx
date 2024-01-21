@@ -2,7 +2,13 @@ import './BreedCard.styles.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export const BreedCard = ({ id, url, name }: { url: string; id: string; name: string }) => {
+type BreedCardProps = {
+  url: string
+  id: string
+  name: string
+}
+
+export const BreedCard = ({ id, url, name }: BreedCardProps) => {
   return (
     <div className='image_container'>
       <Image src={url} alt={id} width={200} height={140} className='image' />

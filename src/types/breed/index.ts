@@ -44,14 +44,15 @@ export type BreedInfo = {
   }
 }
 
-export type BreedOption = {
-  value: string
-  label: string
-}
-
 export type SingleBreed = Pick<
   BreedInfo,
   'id' | 'name' | 'temperament' | 'origin' | 'weight' | 'life_span' | 'alt_names'
 > & {
   image: Pick<BreedInfo['image'], 'id' | 'url'>
+}
+
+export type CatSearchBreed = Omit<BreedInfo, 'image'> & {
+  cfa_url: string
+  vcahospitals_url: string
+  vetstreet_url: string
 }

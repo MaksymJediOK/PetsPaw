@@ -1,9 +1,9 @@
 import { BaseSelectOption } from '@/types/Select'
 
 export const OrderOptions: BaseSelectOption[] = [
-  { value: 'Random', label: 'Random' },
-  { value: 'Desc', label: 'Desc' },
-  { value: 'Asc', label: 'Asc' },
+  { value: 'RAND', label: 'Random' },
+  { value: 'DESC', label: 'Desc' },
+  { value: 'ASC', label: 'Asc' },
 ]
 
 export const ImageTypeOptions: BaseSelectOption[] = [

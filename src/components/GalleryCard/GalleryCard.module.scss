@@ -1,0 +1,57 @@
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image_container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  .img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  &:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 134 142 / 50%);
+    z-index: 1;
+    border-radius: 20px;
+  }
+
+  .heart {
+    opacity: 0;
+    text-decoration: none;
+  }
+
+  &:hover .heart {
+    opacity: 1;
+  }
+}
+
+.hover_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.icon_container {
+  background: #fff;
+  padding: 10px 10px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}

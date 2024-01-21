@@ -5,23 +5,22 @@ import { useForm } from 'react-hook-form'
 import { OrderOptions, ImageTypeOptions, LimitOptions } from '@/types/constants/options'
 import { filterStylesConfig } from '@/app/gallery/selectStyles'
 import { ReloadButton } from '@/ui/Button'
+import { GalleryOrder, ImageType, useGalleryFilterStore } from '@/store'
 
 type Filter = {
-  order: 'Random' | 'Desc' | 'Asc'
+  order: GalleryOrder
   breed: string
-  imageType: 'All' | 'static' | 'animated'
+  imageType: ImageType
   limit: number
 }
 
 const GalleryFilterSection = () => {
   const { control, handleSubmit } = useForm<Filter>({
-    mode: 'onBlur',
-    defaultValues: { order: 'Random', breed: 'All', imageType: 'All', limit: 10 },
+    defaultValues: { order: 'RAND', breed: 'All', imageType: 'All', limit: 10 },
   })
+  const updateFilter = useGalleryFilterStore((state) => state.setFilter)
+  const changeFilter = (data: Filter) => updateFilter(data)
 
-  const changeFilter = (data: Filter) => {
-    console.log(data)
-  }
   return (
     <form className={classes.container} onSubmit={handleSubmit(changeFilter)}>
       <div className={classes.grid}>
@@ -60,7 +59,6 @@ const GalleryFilterSection = () => {
               styles={filterStylesConfig}
             />
           </div>
-
           <ReloadButton click={() => console.log('reload')} />
         </div>
       </div>

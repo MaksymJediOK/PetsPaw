@@ -4,6 +4,7 @@ import { ALayout } from '@/components/GalleryLayouts/ALayout'
 import { mappedBreeds } from '@/app/breeds/mappedBreeds'
 import { BLayout } from '@/components/GalleryLayouts/BLayout'
 import { distributeItems } from '@/utils'
+import { BreedCard } from '@/components/BreedCard'
 
 const Gallery = ({ breeds }: { breeds: BreedInfo[] }) => {
   const galleryArray = mappedBreeds(breeds)
@@ -14,9 +15,21 @@ const Gallery = ({ breeds }: { breeds: BreedInfo[] }) => {
       {batches.map((batch, index) => (
         <div key={index}>
           {index % 2 === 0 ? (
-            <ALayout key={index} breedsBatch={batch} />
+            <ALayout<SingleBreed>
+              CardComponent={BreedCard}
+              key={index}
+              itemsBatch={batch}
+              getName={(item) => item.name}
+              getUrl={(item) => item.image.url}
+            />
           ) : (
-            <BLayout key={index} breedsBatch={batch} />
+            <BLayout<SingleBreed>
+              CardComponent={BreedCard}
+              key={index}
+              itemsBatch={batch}
+              getName={(item) => item.name}
+              getUrl={(item) => item.image.url}
+            />
           )}
         </div>
       ))}
