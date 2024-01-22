@@ -1,4 +1,4 @@
-import { api_key, base_url, subId_key } from '@/types/constants'
+import { subId_key } from '@/types/constants'
 import { Vote } from '@/types/voting'
 import { FavouriteResponse } from '@/types/favourites'
 import { makeApiRequest } from '@/utils/configuredFetch'
