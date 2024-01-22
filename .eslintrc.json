@@ -6,6 +6,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
-    "react/button-has-type": 0
+    "react/button-has-type": 0,
+    "no-unused-vars": "off"
   }
 }
