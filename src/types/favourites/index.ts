@@ -1,4 +1,4 @@
-export interface FavouriteResponse {
+export type FavouriteResponse = {
   id: number
   image_id: string
   sub_id: string | null

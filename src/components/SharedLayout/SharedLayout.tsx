@@ -4,7 +4,7 @@ import { UserChoicesMenu } from '@/components/UserChoicesMenu'
 
 const SharedLayout = () => {
   return (
-    <div>
+    <div className={classes.width}>
       <div className={classes.container}>
         <UserSearch />
         <UserChoicesMenu />

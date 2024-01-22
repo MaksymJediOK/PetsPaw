@@ -12,12 +12,9 @@ const GalleryScreen = () => {
   const filterObj = useGalleryFilterStore((state) => state.filter)
   const url = buildQueryString(filterObj)
   const { data, isLoading, error } = useSWR<SingleCat[]>(url, fetcher)
-  let itemsArray: SingleCat[] | null = null
-  if (!isLoading && data) itemsArray = data.map((item) => item)
-
   if (error) redirect('/')
 
-  return <div>{!isLoading && data ? <GalleryCardsList cats={itemsArray} /> : <Spinner />}</div>
+  return <div>{!isLoading && data ? <GalleryCardsList cats={data} /> : <Spinner />}</div>
 }
 
 export { GalleryScreen }

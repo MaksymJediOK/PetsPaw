@@ -8,7 +8,7 @@ type GalleryFilterState = {
   filter: {
     limit: number
     order: GalleryOrder
-    imageType: ImageType
+    imageType: ImageType | undefined
     breed: string | undefined
   }
 }
@@ -21,7 +21,7 @@ export const useGalleryFilterStore = create<GalleryFilterState & GalleryFn>()((s
   filter: {
     limit: 5,
     order: 'RAND',
-    imageType: 'All',
+    imageType: undefined,
     breed: undefined,
   },
   setFilter: (payload: Partial<GalleryFilterState['filter']>) =>

@@ -1,14 +1,16 @@
 import { api_key, base_url } from '@/types/constants'
 
-interface RequestOptions<T> {
-  method: string
+type RequestMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'
+
+type RequestOptions<T> = {
+  method: RequestMethod
   headers: { [key: string]: string }
   body?: string
 }
 
 export const makeApiRequest = async <T>(
   endpoint: string,
-  method: string = 'GET',
+  method: RequestMethod = 'GET',
   data: T | null = null,
 ): Promise<T> => {
   const headers = {

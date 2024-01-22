@@ -1,8 +1,10 @@
 import { api_key, base_url, subId_key } from '@/types/constants'
 import { Vote } from '@/types/voting'
 import { FavouriteResponse } from '@/types/favourites'
+import { makeApiRequest } from '@/utils/configuredFetch'
 
-const url = `${base_url}/favourites`
+const url = `favourites`
+const fullUrl = `${url}?sub_id=${subId_key}`
 type FavouriteType = Omit<Vote, 'value'>
 
 export const addToFavourites = async (imageId: string) => {
@@ -10,24 +12,8 @@ export const addToFavourites = async (imageId: string) => {
     image_id: imageId,
     sub_id: subId_key,
   }
-
-  await fetch(url, {
-    method: 'POST',
-    headers: {
-      'x-api-key': api_key,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(rawBody),
-  })
+  await makeApiRequest(url, 'POST', rawBody)
 }
 
-export const getFavourites = async (): Promise<FavouriteResponse[]> => {
-  const res = await fetch(`${url}?sub_id=${subId_key}`, {
-    headers: {
-      'x-api-key': api_key,
-      'Content-Type': 'application/json',
-    },
-    cache: 'no-cache',
-  })
-  return res.json()
-}
+export const getFavourites = async (): Promise<FavouriteResponse[]> =>
+  await makeApiRequest<FavouriteResponse[]>(fullUrl)
